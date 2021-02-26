@@ -11,12 +11,13 @@ car.dueno = "Edgar";
 console.log(car);
 */
 
-let i = 5;
+/*let i = 5;
 for(let i = 0; i<10; i++){
 
 }
 
 console.log(i);
+*/
 /*
 var y;
 function ejemplo(){
@@ -53,3 +54,16 @@ a();
 
 console.log(x,z);
 */
+
+
+function cargarFile() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function(){
+        if (this.readyState == 4 && this.status == 200) {
+            document.getElementById("texto").innerHTML = this.responseText;
+        }
+    }
+
+    xhttp.open("GET", "ajax_info.txt");
+    xhttp.send();
+}
